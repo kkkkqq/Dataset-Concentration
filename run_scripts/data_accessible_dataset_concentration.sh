@@ -17,10 +17,9 @@ python encode_features_da.py \
 
 
 numpiv=100 #IPC
-seed=0
 exptag=ipc${numpiv}
-pivotdir=../samples/${proj}/${config}/${exptag}/seed${seed}
-cachedir=../cache/${proj}/${config}/${exptag}/seed${seed}
+pivotdir=../samples/${proj}/${config}/${exptag}
+cachedir=../cache/${proj}/${config}/${exptag}
 strength=0.0005
 
 #---------------------------condense to ${numpiv} IPC-----------------------
@@ -28,7 +27,7 @@ python synthesize_da.py \
     --port ${port} \
     --config-name ${config} --dit-path ${ditpath} \
     --feat-path ${featpth} --pivot-dir ${pivotdir} \
-    --image-size 256 --seed ${seed} --num-pivots ${numpiv} \
+    --image-size 256 --num-pivots ${numpiv} \
     --sort-strength ${strength} --tqdm
 
 #--------------------------evaluating the synthetic dataset---------------
