@@ -60,7 +60,8 @@ python mix_from_real.py --port ${port} \
     --config-name ${config} --data-path ${datapath} \
     --pivot-path ${pivotdir} --new-dir ${newdir} \
     --cache-dir ${cachedir} --net-type resnet_ap --depth 10 --norm-type instance \
-    --num-new ${numnew} --save-odds-to ${cachedir} --copy-pivots
+    --num-new ${numnew} --save-odds-to ${cachedir} --copy-pivots \
+    --image-size 256 --in-size 224
 
 #--------------------------evaluating the concentrated dataset---------------
 python train.py \
