@@ -340,11 +340,11 @@ class ImageWoofConfig(ImageNetteConfig):
     def default_seed(self, ipc, da):
         if da:
             if ipc == 10:
-                return 4
-            elif ipc == 50:
-                return 4
-            elif ipc == 100:
                 return 3
+            elif ipc == 50:
+                return 5
+            elif ipc == 100:
+                return 0
             else:
                 return None
         else:
