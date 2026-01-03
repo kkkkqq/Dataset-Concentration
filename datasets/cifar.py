@@ -156,7 +156,12 @@ class CIFARConfig(DstConfig):
         return None
     
     def save_new_images(self, items, path):
-        if not isinstance(items, Tensor):
+        if len(items[0].shape) == 3:
+                items = [tr.unsqueeze(0) for tr in items]
+            elif len(items[0].shape) == 4:
+                pass
+            else:
+                raise AssertionError(f"items should be 3 or 4 dims, but got {len(items[0].shape)}")
             img_tsr = torch.cat(items, 0)
         else:
             img_tsr = items
